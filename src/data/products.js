@@ -4,7 +4,7 @@ export const products = {
             image: "/images/geprek.png",
             alt: "Ayam Penyet Geprek",
             badgeClass: "",
-            name: "Geprekin",
+            name: "Paket Geprekin",
             description: "Ayam crispy yang digeprek dengan sambal pedas gurih, disajikan bersama nasi dan lalapan segar.",
             price: "Rp15.000"
         },
