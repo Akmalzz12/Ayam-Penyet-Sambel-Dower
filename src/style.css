@@ -193,10 +193,12 @@ button{
 @media(max-width:900px){
     .desktop-nav{
         gap:18px;
+        font-family:"Poppins",sans-serif;
     }
 
     .desktop-nav>a{
         font-size:13px;
+        font-family:"Poppins",sans-serif;
     }
 
     .nav-button{
