@@ -7,10 +7,10 @@ const heroImages = [
 ];
 
 const plateImages = [
-    "/images/piring 1.png",
-    "/images/piring2.png",
-    "/images/piring3.png",
-    "/images/piring4.png"
+    "/images/p1.png",
+    "/images/p2.png",
+    "/images/p3.png",
+    "/images/p4.png"
 ];
 
 export default function Hero() {
