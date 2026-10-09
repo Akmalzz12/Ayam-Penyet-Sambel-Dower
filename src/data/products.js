@@ -118,38 +118,38 @@ export const products = {
 
     dessert: [
         {
-            image: "/images/teler.png",
-            alt: "Es Teler",
+            image: "/images/puding.png",
+            alt: "Pudding Dessert",
             badge: "",
             badgeClass: "",
-            name: "Es Teler",
+            name: "Pudding Dessert",
             description: "Es Teler dengan perpaduan alpukat, kelapa muda, nangka, dan kuah creamy yang manis serta menyegarkan.",
             price: "Rp10.000"
         },
         {
-            image: "/images/jeruk.png",
-            alt: "Es Jeruk",
+            image: "/images/eskrim.png",
+            alt: "Es Krim",
             badge: "",
             badgeClass: "",
-            name: "Es Jeruk",
+            name: "Es Krim Dessert",
             description: "Es Jeruk dengan perasan jeruk segar yang manis, asam, dan menyegarkan, cocok dinikmati setelah makanan pedas.",
             price: "Rp7.000"
         },
         {
-            image: "/images/doger.png",
-            alt: "Es Doger",
+            image: "/images/box.png",
+            alt: "Dessert Box",
             badge: "",
             badgeClass: "",
-            name: "Es Doger",
+            name: "Dessert Box",
             description: "Es Doger dengan perpaduan tape, kelapa, susu, dan sirup yang manis, creamy, serta menyegarkan.",
             price: "Rp10.000"
         },
         {
-            image: "/images/thaitea.png",
-            alt: "Es Thai Tea",
+            image: "/images/regal.png",
+            alt: "Regal",
             badge: "",
             badgeClass: "",
-            name: "Es Thai Tea",
+            name: "Regal dessert",
             description: "Thai Tea dengan perpaduan teh khas Thailand, susu creamy, dan rasa manis yang lembut, disajikan dingin dan menyegarkan.",
             price: "Rp9.000"
         }
