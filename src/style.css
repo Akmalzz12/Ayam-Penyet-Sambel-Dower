@@ -104,6 +104,7 @@ button{
     display:flex;
     align-items:center;
     gap:30px;
+    font-family:"Poppins",sans-serif;
 }
 
 .desktop-nav>a{
