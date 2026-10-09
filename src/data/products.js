@@ -3,14 +3,16 @@ export const products = {
         {
             image: "/images/geprek.png",
             alt: "Ayam Penyet Geprek",
+            badge: "",
             badgeClass: "",
             name: "Paket Geprekin",
             description: "Ayam crispy yang digeprek dengan sambal pedas gurih, disajikan bersama nasi dan lalapan segar.",
             price: "Rp15.000"
         },
         {
-            image: "/images/mozarella.png",
+            image: "/images/moza.png",
             alt: "Ayam Penyet Mozarella",
+            badge: "",
             badgeClass: "spicy",
             name: "Paket Mozain",
             description: "Ayam crispy dengan lelehan mozzarella yang creamy, dipadukan sambal khas dan nasi hangat.",
@@ -19,6 +21,7 @@ export const products = {
         {
             image: "/images/matah.png",
             alt: "Ayam Penyet Sambel Matah",
+            badge: "",
             badgeClass: "",
             name: "Paket Matahin",
             description: "Ayam crispy dengan sambal matah segar dan harum, perpaduan pedas, gurih, dan menyegarkan.",
@@ -27,6 +30,7 @@ export const products = {
         {
             image: "/images/bakar.png",
             alt: "Ayam Bakar Penyet",
+            badge: "",
             badgeClass: "",
             name: "Paket Bakarin",
             description: "Ayam bakar berbumbu dengan aroma smoky dan rasa gurih manis, lengkap dengan sambal, nasi, dan lalapan.",
@@ -37,39 +41,156 @@ export const products = {
     minuman: [
         {
             image: "/images/teler.png",
-            alt: "Es Telerin",
+            alt: "Es Teler",
             badge: "",
             badgeClass: "",
-            name: "Es Telerin",
+            name: "Es Teler",
             description: "Es Teler dengan perpaduan alpukat, kelapa muda, nangka, dan kuah creamy yang manis serta menyegarkan.",
             price: "Rp10.000"
         },
         {
-            image: "/images/doger.png",
-            alt: "Es Dogerin",
+            image: "/images/jeruk.png",
+            alt: "Es Jeruk",
             badge: "",
             badgeClass: "",
-            name: "Es Dogerin",
+            name: "Es Jeruk",
+            description: "Es Jeruk dengan perasan jeruk segar yang manis, asam, dan menyegarkan, cocok dinikmati setelah makanan pedas.",
+            price: "Rp7.000"
+        },
+        {
+            image: "/images/doger.png",
+            alt: "Es Doger",
+            badge: "",
+            badgeClass: "",
+            name: "Es Doger",
             description: "Es Doger dengan perpaduan tape, kelapa, susu, dan sirup yang manis, creamy, serta menyegarkan.",
             price: "Rp10.000"
         },
         {
-            image: "/images/jeruk.png",
-            alt: "Es Jerukin",
+            image: "/images/thaitea.png",
+            alt: "Es Thai Tea",
             badge: "",
             badgeClass: "",
-            name: "Es Jerukin",
-            description: "Es Jeruk dengan perasan jeruk segar yang manis, asam, dan menyegarkan, cocok dinikmati setelah makanan pedas.",
+            name: "Es Thai Tea",
+            description: "Thai Tea dengan perpaduan teh khas Thailand, susu creamy, dan rasa manis yang lembut, disajikan dingin dan menyegarkan.",
+            price: "Rp9.000"
+        }
+    ],
+
+    pelengkap: [
+        {
+            image: "/images/asem.png",
+            alt: "Sayur Asem",
+            badge: "",
+            badgeClass: "",
+            name: "Sayur Asem",
+            description: "Sayur asem segar dengan kuah gurih dan rasa asam yang menyegarkan, cocok sebagai pelengkap makanan.",
             price: "Rp8.000"
         },
         {
-            image: "/images/thaitea.png",
-            alt: "Es ThaiTeain",
+            image: "/images/kangkung.png",
+            alt: "Cah Kangkung",
             badge: "",
             badgeClass: "",
-            name: "Es ThaiTeain",
+            name: "Cah Kangkung",
+            description: "Kangkung segar yang ditumis dengan bumbu gurih dan aroma harum, nikmat disantap bersama ayam penyet.",
+            price: "Rp10.000"
+        },
+        {
+            image: "/images/sop.png",
+            alt: "Sayur Sop",
+            badge: "",
+            badgeClass: "",
+            name: "Sayur Sop",
+            description: "Sayur sop dengan kuah gurih dan hangat, berisi sayuran segar yang cocok dinikmati bersama menu utama.",
+            price: "Rp10.000"
+        },
+        {
+            image: "/images/lodeh.png",
+            alt: "Sayur Lodeh",
+            badge: "",
+            badgeClass: "",
+            name: "Sayur Lodeh",
+            description: "Sayur lodeh dengan kuah santan gurih dan sayuran pilihan, menghadirkan rasa lembut yang nikmat.",
+            price: "Rp10.000"
+        }
+    ],
+
+    dessert: [
+        {
+            image: "/images/teler.png",
+            alt: "Es Teler",
+            badge: "",
+            badgeClass: "",
+            name: "Es Teler",
+            description: "Es Teler dengan perpaduan alpukat, kelapa muda, nangka, dan kuah creamy yang manis serta menyegarkan.",
+            price: "Rp10.000"
+        },
+        {
+            image: "/images/jeruk.png",
+            alt: "Es Jeruk",
+            badge: "",
+            badgeClass: "",
+            name: "Es Jeruk",
+            description: "Es Jeruk dengan perasan jeruk segar yang manis, asam, dan menyegarkan, cocok dinikmati setelah makanan pedas.",
+            price: "Rp7.000"
+        },
+        {
+            image: "/images/doger.png",
+            alt: "Es Doger",
+            badge: "",
+            badgeClass: "",
+            name: "Es Doger",
+            description: "Es Doger dengan perpaduan tape, kelapa, susu, dan sirup yang manis, creamy, serta menyegarkan.",
+            price: "Rp10.000"
+        },
+        {
+            image: "/images/thaitea.png",
+            alt: "Es Thai Tea",
+            badge: "",
+            badgeClass: "",
+            name: "Es Thai Tea",
             description: "Thai Tea dengan perpaduan teh khas Thailand, susu creamy, dan rasa manis yang lembut, disajikan dingin dan menyegarkan.",
-            price: "Rp8.000"
+            price: "Rp9.000"
+        }
+    ],
+
+    paketan: [
+        {
+            image: "/images/teler.png",
+            alt: "Es Teler",
+            badge: "",
+            badgeClass: "",
+            name: "Es Teler",
+            description: "Es Teler dengan perpaduan alpukat, kelapa muda, nangka, dan kuah creamy yang manis serta menyegarkan.",
+            price: "Rp10.000"
+        },
+        {
+            image: "/images/jeruk.png",
+            alt: "Es Jeruk",
+            badge: "",
+            badgeClass: "",
+            name: "Es Jeruk",
+            description: "Es Jeruk dengan perasan jeruk segar yang manis, asam, dan menyegarkan, cocok dinikmati setelah makanan pedas.",
+            price: "Rp7.000"
+        },
+        {
+            image: "/images/doger.png",
+            alt: "Es Doger",
+            badge: "",
+            badgeClass: "",
+            name: "Es Doger",
+            description: "Es Doger dengan perpaduan tape, kelapa, susu, dan sirup yang manis, creamy, serta menyegarkan.",
+            price: "Rp10.000"
+        },
+        {
+            image: "/images/thaitea.png",
+            alt: "Es Thai Tea",
+            badge: "",
+            badgeClass: "",
+            name: "Es Thai Tea",
+            description: "Thai Tea dengan perpaduan teh khas Thailand, susu creamy, dan rasa manis yang lembut, disajikan dingin dan menyegarkan.",
+            price: "Rp9.000"
         }
     ]
 };
