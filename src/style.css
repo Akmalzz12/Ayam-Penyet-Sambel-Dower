@@ -2161,3 +2161,146 @@ button{
         font-size:10px;
     }
 }
+
+/* =================================
+   HERO ROTATING PLATES
+================================= */
+
+.hero-plates {
+    position: absolute;
+    inset: 0;
+    z-index: 2;
+    overflow: hidden;
+    pointer-events: none;
+}
+
+.hero-plate {
+    position: absolute;
+    width: clamp(150px, 21vw, 310px);
+    aspect-ratio: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    animation: plateRotate 28s linear infinite;
+    will-change: transform;
+}
+
+.hero-plate img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: block;
+}
+
+/* Sudut kiri atas */
+.hero-plate-1 {
+    top: 3%;
+    left: -3%;
+    animation-duration: 30s;
+}
+
+/* Sudut kanan atas */
+.hero-plate-2 {
+    top: 3%;
+    right: -3%;
+    animation-duration: 34s;
+    animation-direction: reverse;
+}
+
+/* Sudut kiri bawah */
+.hero-plate-3 {
+    bottom: 2%;
+    left: -2%;
+    width: clamp(135px, 19vw, 275px);
+    animation-duration: 32s;
+    animation-delay: -8s;
+}
+
+/* Sudut kanan bawah */
+.hero-plate-4 {
+    bottom: 2%;
+    right: -2%;
+    width: clamp(135px, 19vw, 275px);
+    animation-duration: 36s;
+    animation-direction: reverse;
+    animation-delay: -12s;
+}
+
+@keyframes plateRotate {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* Pastikan konten berada di depan piring */
+.hero-container {
+    position: relative;
+    z-index: 3;
+}
+
+/* Tablet */
+@media (max-width: 768px) {
+    .hero-plate {
+        width: clamp(100px, 29vw, 150px);
+    }
+
+    .hero-plate-1 {
+        top: 2%;
+        left: -5%;
+    }
+
+    .hero-plate-2 {
+        top: 2%;
+        right: -5%;
+    }
+
+    .hero-plate-3 {
+        bottom: 2%;
+        left: -5%;
+        width: clamp(95px, 27vw, 140px);
+    }
+
+    .hero-plate-4 {
+        bottom: 2%;
+        right: -5%;
+        width: clamp(95px, 27vw, 140px);
+    }
+
+    .hero-plate-1 {
+        animation-duration: 30s;
+    }
+
+    .hero-plate-2 {
+        animation-duration: 34s;
+    }
+
+    .hero-plate-3 {
+        animation-duration: 32s;
+    }
+
+    .hero-plate-4 {
+        animation-duration: 36s;
+    }
+}
+
+/* HP kecil */
+@media (max-width: 400px) {
+    .hero-plate {
+        width: 105px;
+    }
+
+    .hero-plate-3,
+    .hero-plate-4 {
+        width: 95px;
+    }
+}
+
+/* Hormati pengaturan pengurangan animasi perangkat */
+@media (prefers-reduced-motion: reduce) {
+    .hero-plate {
+        animation: none;
+    }
+}
