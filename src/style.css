@@ -2194,12 +2194,9 @@ button{
 
 /* Sudut kiri atas */
 .hero-plate-1 {
-    top: 10px !important;
-    left: 10px !important;
-    width: 220px !important;
-    z-index: 10 !important;
-    opacity: 1 !important;
-    visibility: visible !important;
+    top: 3%;
+    left: -3%;
+    animation-duration: 30s;
 }
 
 /* Sudut kanan atas */
