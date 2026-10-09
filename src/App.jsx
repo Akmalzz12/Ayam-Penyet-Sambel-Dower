@@ -1,3 +1,4 @@
+
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 import Navbar from "./components/Navbar";
@@ -13,35 +14,32 @@ import TentangKami from "./components/TentangKami";
 import "./style.css";
 
 function Home() {
-return (
-<>
-<main>
-<Hero />
-<Menu />
-<WhyUs />
-<FAQ />
-<Reservation />
-</main>
-</>
-);
+    return (
+        <main>
+            <Hero />
+            <Menu />
+            <WhyUs />
+            <FAQ />
+            <Reservation />
+        </main>
+    );
 }
 
 export default function App() {
-return (
-<BrowserRouter>
-<Navbar />
+    return (
+        <BrowserRouter>
+            <Navbar />
 
-        <Routes>
-            <Route path="/" element={<Home />} />
-            <Route
-                path="/tentang-kami"
-                element={<TentangKami />}
-            />
-        </Routes>
+            <Routes>
+                <Route path="/" element={<Home />} />
+                <Route
+                    path="/tentang-kami"
+                    element={<TentangKami />}
+                />
+            </Routes>
 
-        <Footer />
-        <BackToTop />
-    </BrowserRouter>
-);
-
+            <Footer />
+            <BackToTop />
+        </BrowserRouter>
+    );
 }
