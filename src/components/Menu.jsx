@@ -22,22 +22,46 @@ function Menu() {
                 </div>
 
                 <div className="menu-tabs">
-                    <button
-                        type="button"
-                        className={activeCategory === "makanan" ? "active" : ""}
-                        onClick={() => setActiveCategory("makanan")}
-                    >
-                        Makanan
-                    </button>
+    <button
+        type="button"
+        className={activeCategory === "makanan" ? "active" : ""}
+        onClick={() => setActiveCategory("makanan")}
+    >
+        Makanan
+    </button>
 
-                    <button
-                        type="button"
-                        className={activeCategory === "minuman" ? "active" : ""}
-                        onClick={() => setActiveCategory("minuman")}
-                    >
-                        Minuman
-                    </button>
-                </div>
+    <button
+        type="button"
+        className={activeCategory === "minuman" ? "active" : ""}
+        onClick={() => setActiveCategory("minuman")}
+    >
+        Minuman
+    </button>
+
+    <button
+        type="button"
+        className={activeCategory === "pelengkap" ? "active" : ""}
+        onClick={() => setActiveCategory("pelengkap")}
+    >
+        Pelengkap
+    </button>
+
+    <button
+    type="button"
+    className={activeCategory === "dessert" ? "active" : ""}
+    onClick={() => setActiveCategory("dessert")}
+>
+    Dessert
+</button>
+
+    <button
+    type="button"
+    className={activeCategory === "paketan" ? "active" : ""}
+    onClick={() => setActiveCategory("paketan")}
+>
+    Paketan
+</button>
+</div>
 
                 <div className="menu-grid">
                     {products[activeCategory].map((product) => (
