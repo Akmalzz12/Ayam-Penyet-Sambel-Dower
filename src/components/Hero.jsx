@@ -7,7 +7,7 @@ const heroImages = [
 ];
 
 const plateImages = [
-    "/images/piring1.png",
+    "/images/piring 1.png",
     "/images/piring2.png",
     "/images/piring3.png",
     "/images/piring4.png"
