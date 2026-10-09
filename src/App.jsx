@@ -8,7 +8,7 @@ import FAQ from "./components/FAQ";
 import Reservation from "./components/Reservation";
 import Footer from "./components/Footer";
 import BackToTop from "./components/BackToTop";
-import TentangKami from "./pages/TentangKami";
+import TentangKami from "./components/TentangKami";
 
 import "./style.css";
 
