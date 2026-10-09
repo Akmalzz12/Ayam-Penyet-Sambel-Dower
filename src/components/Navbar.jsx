@@ -21,7 +21,7 @@ export default function Navbar() {
                 </a>
                 <nav className="desktop-nav">
                     <a href="#home">Beranda</a>
-                    <a href="#about">Tentang Kami</a>
+                    <a to="/tentang-kami">Tentang Kami</a>
                     <a href="#menu">Menu Unggulan</a>
                     <a href="#contact">Kontak Kami</a>
                     <a href="#reservation" className="nav-button">Pesan Sekarang</a>
@@ -32,7 +32,7 @@ export default function Navbar() {
             </div>
             <nav className={`mobile-nav${menuOpen ? " active" : ""}`}>
                 <a href="#home" onClick={closeMenu}>Beranda</a>
-                <a href="#about" onClick={closeMenu}>Tentang Kami</a>
+                <a to="/tentang-kami" onClick={closeMenu}>Tentang Kami</a>
                 <a href="#menu" onClick={closeMenu}>Menu Unggulan</a>
                 <a href="#contact" onClick={closeMenu}>Kontak Kami</a>
                 <a href="#reservation" className="mobile-nav-button" onClick={closeMenu}>Pesan Sekarang</a>
