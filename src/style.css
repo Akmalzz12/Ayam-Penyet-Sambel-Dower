@@ -2304,3 +2304,47 @@ button{
         animation: none;
     }
 }
+
+/* FIX: MENU TABS MOBILE 3-2 */
+@media (max-width: 768px) {
+    .menu-tabs {
+        display: grid !important;
+        grid-template-columns: repeat(6, minmax(0, 1fr)) !important;
+        gap: 8px !important;
+        width: 100% !important;
+        max-width: 420px;
+        margin: 0 auto 30px !important;
+        overflow: visible !important;
+        white-space: normal !important;
+    }
+
+    .menu-tabs button {
+        min-width: 0 !important;
+        width: 100% !important;
+        padding: 10px 4px !important;
+        white-space: normal !important;
+        font-size: 12px !important;
+    }
+
+    /* Baris pertama: 3 tombol */
+    .menu-tabs button:nth-child(1) {
+        grid-column: 1 / span 2 !important;
+    }
+
+    .menu-tabs button:nth-child(2) {
+        grid-column: 3 / span 2 !important;
+    }
+
+    .menu-tabs button:nth-child(3) {
+        grid-column: 5 / span 2 !important;
+    }
+
+    /* Baris kedua: 2 tombol di tengah */
+    .menu-tabs button:nth-child(4) {
+        grid-column: 2 / span 2 !important;
+    }
+
+    .menu-tabs button:nth-child(5) {
+        grid-column: 4 / span 2 !important;
+    }
+}
