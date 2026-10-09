@@ -6,6 +6,13 @@ const heroImages = [
     "/images/banner3.png"
 ];
 
+const plateImages = [
+    "/images/piring1.png",
+    "/images/piring2.png",
+    "/images/piring3.png",
+    "/images/piring4.png"
+];
+
 export default function Hero() {
     const [activeImage, setActiveImage] = useState(0);
 
@@ -30,11 +37,24 @@ export default function Hero() {
                     style={{
                         backgroundImage: `url("${image}")`
                     }}
-                ></div>
+                />
             ))}
 
             <div className="hero-overlay"></div>
 
+            {/* Decorative rotating plates */}
+            <div className="hero-plates" aria-hidden="true">
+                {plateImages.map((image, index) => (
+                    <div
+                        key={image}
+                        className={`hero-plate hero-plate-${index + 1}`}
+                    >
+                        <img src={image} alt="" />
+                    </div>
+                ))}
+            </div>
+
+            {/* Hero content */}
             <div className="hero-container">
                 <div className="hero-content">
                     <span className="hero-label">
