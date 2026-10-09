@@ -108,6 +108,7 @@ button{
 }
 
 .desktop-nav>a{
+    font-family:"Poppins",sans-serif;
     position:relative;
     font-size:14px;
     font-weight:500;
