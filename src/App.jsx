@@ -7,7 +7,7 @@ import Reservation from "./components/Reservation";
 import Footer from "./components/Footer";
 import BackToTop from "./components/BackToTop";
 
-import "./tyle.css";
+import "./style.css";
 
 export default function App() {
     return (
