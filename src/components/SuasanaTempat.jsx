@@ -6,11 +6,11 @@ const galleryCategories = [
         label: "Indoor",
         images: [
             {
-                src: "/images/banner2.png",
+                src: "/images/indoor1.png",
                 alt: "Suasana area makan indoor Ayam Penyet Sambel Dower",
             },
             {
-                src: "/images/banner1.png",
+                src: "/images/indoor2.png",
                 alt: "Area tempat duduk indoor restoran",
             },
         ],
@@ -20,11 +20,11 @@ const galleryCategories = [
         label: "Outdoor",
         images: [
             {
-                src: "/images/galeri-outdoor-1.jpg",
+                src: "/images/outdor1.png",
                 alt: "Suasana area makan outdoor",
             },
             {
-                src: "/images/galeri-outdoor-2.jpg",
+                src: "/images/outdor2.png",
                 alt: "Area outdoor Ayam Penyet Sambel Dower",
             },
         ],
@@ -34,11 +34,11 @@ const galleryCategories = [
         label: "Tempat Parkir",
         images: [
             {
-                src: "/images/galeri-parkir-1.jpg",
+                src: "/images/parkir1.png",
                 alt: "Area parkir restoran",
             },
             {
-                src: "/images/galeri-parkir-2.jpg",
+                src: "/images/parkir2.png",
                 alt: "Area kendaraan pengunjung restoran",
             },
         ],
