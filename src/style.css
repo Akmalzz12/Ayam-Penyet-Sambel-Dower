@@ -2653,24 +2653,23 @@ button{
     }
 
     /* TOMBOL KATEGORI MOBILE */
-    
-.gallery-tabs {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 9px;
-    margin-bottom: 24px;
-}
 
-.gallery-tab {
-    width: calc((100% - 18px) / 3);
-    min-width: 0;
-    min-height: 35px;
-    padding: 0 4px;
-    flex: 0 0 calc((100% - 18px) / 3);
-    border-radius: 7px;
-    font-size: 12px;
-}
+    .gallery-tabs {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 9px;
+    }
+
+    .gallery-tab {
+        box-sizing: border-box;
+        width: calc((100% - 18px) / 3);
+        flex: 0 0 calc((100% - 18px) / 3);
+        min-width: 0;
+        min-height: 35px;
+        padding: 0 4px;
+        font-size: 12px;
+    }
 
     /* FOTO ATAS-BAWAH */
 
