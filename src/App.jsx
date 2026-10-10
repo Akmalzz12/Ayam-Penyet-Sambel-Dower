@@ -1,6 +1,7 @@
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
 import Menu from "./components/Menu";
+import SuasanaTempat from "./components/SuasanaTempat";
 import WhyUs from "./components/WhyUs";
 import FAQ from "./components/FAQ";
 import Reservation from "./components/Reservation";
@@ -17,6 +18,7 @@ export default function App() {
             <main>
                 <Hero />
                 <Menu />
+                <SuasanaTempat />
                 <WhyUs />
                 <FAQ />
                 <Reservation />
