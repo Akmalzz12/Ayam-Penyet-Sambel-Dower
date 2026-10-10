@@ -2441,17 +2441,3 @@ button{
     }
 }
 
-/* LEBARKAN KONTEN WEBSITE */
-@media (min-width: 0px) {
-    .nav-container,
-    .hero-container,
-    .menu-container,
-    .why-container,
-    .faq-container,
-    .reservation-container,
-    .footer-container,
-    .about-container {
-        width: 96% !important;
-        max-width: 1400px !important;
-    }
-}
