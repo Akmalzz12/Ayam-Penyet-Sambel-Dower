@@ -1702,8 +1702,9 @@ button{
 }
 
 .footer-container{
-    width:min(1180px,92%);
-    margin:0 auto;
+    width: 98%;
+    max-width: 1400px;
+    margin: 0 auto;
     font-family:"Poppins",sans-serif;
 }
 
