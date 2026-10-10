@@ -1,3 +1,4 @@
+
 import { useState } from "react";
 
 const galleryCategories = [
@@ -43,6 +44,34 @@ const galleryCategories = [
             },
         ],
     },
+    {
+        id: "mushollah",
+        label: "Mushollah",
+        images: [
+            {
+                src: "/images/mushollah1.png",
+                alt: "Suasana mushollah Ayam Penyet Sambel Dower",
+            },
+            {
+                src: "/images/mushollah2.png",
+                alt: "Area ibadah mushollah restoran",
+            },
+        ],
+    },
+    {
+        id: "lesehan",
+        label: "Lesehan",
+        images: [
+            {
+                src: "/images/lesehan1.png",
+                alt: "Area lesehan Ayam Penyet Sambel Dower",
+            },
+            {
+                src: "/images/lesehan2.png",
+                alt: "Tempat duduk lesehan restoran",
+            },
+        ],
+    },
 ];
 
 export default function Gallery() {
@@ -55,22 +84,20 @@ export default function Gallery() {
     return (
         <section className="gallery-section" id="gallery">
             <div className="gallery-container">
-                
-<div className="gallery-heading">
-    <span className="gallery-eyebrow">
-        KENALI TEMPAT KAMI
-    </span>
+                <div className="gallery-heading">
+                    <span className="gallery-eyebrow">
+                        KENALI TEMPAT KAMI
+                    </span>
 
-    <h2>
-        Suasana <span>Kami</span>
-    </h2>
+                    <h2>
+                        Suasana <span>Kami</span>
+                    </h2>
 
-    <p>
-        Lihat suasana tempat makan kami, dari area indoor
-        hingga outdoor dan tempat parkir.
-    </p>
-</div>
-
+                    <p>
+                        Lihat suasana tempat makan kami, dari area indoor
+                        hingga outdoor, mushollah, lesehan, dan tempat parkir.
+                    </p>
+                </div>
 
                 <div
                     className="gallery-tabs"
@@ -82,13 +109,17 @@ export default function Gallery() {
                             key={category.id}
                             type="button"
                             role="tab"
-                            aria-selected={activeCategory === category.id}
+                            aria-selected={
+                                activeCategory === category.id
+                            }
                             className={`gallery-tab ${
                                 activeCategory === category.id
                                     ? "active"
                                     : ""
                             }`}
-                            onClick={() => setActiveCategory(category.id)}
+                            onClick={() =>
+                                setActiveCategory(category.id)
+                            }
                         >
                             {category.label}
                         </button>
@@ -101,7 +132,10 @@ export default function Gallery() {
                     key={selectedCategory.id}
                 >
                     {selectedCategory.images.map((image) => (
-                        <figure className="gallery-card" key={image.src}>
+                        <figure
+                            className="gallery-card"
+                            key={image.src}
+                        >
                             <img
                                 src={image.src}
                                 alt={image.alt}
@@ -113,4 +147,4 @@ export default function Gallery() {
             </div>
         </section>
     );
-      }
+}
