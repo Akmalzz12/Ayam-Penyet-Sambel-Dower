@@ -2654,20 +2654,24 @@ button{
 
     /* TOMBOL KATEGORI MOBILE */
 
-    .gallery-tabs {
-        display: grid;
-        grid-template-columns: repeat(3, minmax(0, 1fr));
-        gap: 9px;
-        margin-bottom: 24px;
-    }
+    
+.gallery-tabs {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 9px;
+    margin-bottom: 24px;
+}
 
-    .gallery-tab{
-        width:100%;
-        min-height:35px;
-        padding:0 8px;
-        border-radius:7px;
-        font-size:12px;
-    }
+.gallery-tab {
+    width: calc((100% - 18px) / 3);
+    min-height: 35px;
+    padding: 0 8px;
+    flex: 0 0 calc((100% - 18px) / 3);
+    border-radius: 7px;
+    font-size: 12px;
+}
+
 
     /* FOTO ATAS-BAWAH */
 
