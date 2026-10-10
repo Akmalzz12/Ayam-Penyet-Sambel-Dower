@@ -1,6 +1,4 @@
-
 import { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
 
 export default function Navbar() {
     const [scrolled, setScrolled] = useState(false);
@@ -32,13 +30,20 @@ export default function Navbar() {
                 </a>
 
                 <nav className="desktop-nav">
-                    <Link to="/" onClick={closeMenu}>Beranda</Link>
-                    <Link to="/tentang-kami" onClick={closeMenu}>
-                        Tentang Kami
-                    </Link>
-                    <a href="/#menu">Menu Unggulan</a>
-                    <a href="/#contact">Kontak Kami</a>
-                    <a href="/#reservation" className="nav-button">
+                    <a href="/#home" onClick={closeMenu}>
+                        Beranda
+                    </a>
+                    <a href="/#menu" onClick={closeMenu}>
+                        Menu Unggulan
+                    </a>
+                    <a href="/#contact" onClick={closeMenu}>
+                        Kontak Kami
+                    </a>
+                    <a
+                        href="/#reservation"
+                        className="nav-button"
+                        onClick={closeMenu}
+                    >
                         Pesan Sekarang
                     </a>
                 </nav>
@@ -57,12 +62,15 @@ export default function Navbar() {
             </div>
 
             <nav className={`mobile-nav${menuOpen ? " active" : ""}`}>
-                <Link to="/" onClick={closeMenu}>Beranda</Link>
-                <Link to="/tentang-kami" onClick={closeMenu}>
-                    Tentang Kami
-                </Link>
-                <a href="/#menu" onClick={closeMenu}>Menu Unggulan</a>
-                <a href="/#contact" onClick={closeMenu}>Kontak Kami</a>
+                <a href="/#home" onClick={closeMenu}>
+                    Beranda
+                </a>
+                <a href="/#menu" onClick={closeMenu}>
+                    Menu Unggulan
+                </a>
+                <a href="/#contact" onClick={closeMenu}>
+                    Kontak Kami
+                </a>
                 <a
                     href="/#reservation"
                     className="mobile-nav-button"
