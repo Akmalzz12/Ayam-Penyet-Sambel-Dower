@@ -40,7 +40,8 @@ button{
 }
 
 .nav-container{
-    width:min(1180px,92%);
+    width:96%;
+    max-width:1400px;
     height:100%;
     margin:0 auto;
     display:flex;
