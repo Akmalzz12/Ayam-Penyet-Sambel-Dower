@@ -1,7 +1,7 @@
 
 import { useState } from "react";
 
-const SCRIPT_URL = "TEMPEL_URL_WEB_APP_DI_SINI";
+const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbxYTxfiEPqS65ctqAFIk32DCAZHiOOGmB9C9Reje91uTXWvH4GsU9BJx1ZtD1i1JfsW/exec";
 
 export default function Reservation() {
     const [form, setForm] = useState({
