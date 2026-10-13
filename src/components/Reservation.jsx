@@ -1,7 +1,8 @@
 
 import { useState } from "react";
 
-const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbztQwLjKOIX08F3cJV6f8aNYV4expJbT6rO1No08xqcno1yn-G33oVUKnLMHzQJMRq6/exec";
+const SCRIPT_URL =
+    "https://script.google.com/macros/s/AKfycbztQwLjKOIX08F3cJV6f8aNYV4expJbT6rO1No08xqcno1yn-G33oVUKnLMHzQJMRq6/exec";
 
 export default function Reservation() {
     const [form, setForm] = useState({
@@ -15,6 +16,7 @@ export default function Reservation() {
 
     const [status, setStatus] = useState("");
     const [isSubmitting, setIsSubmitting] = useState(false);
+    const [showSuccess, setShowSuccess] = useState(false);
 
     const handleChange = (event) => {
         const { id, value } = event.target;
@@ -25,11 +27,6 @@ export default function Reservation() {
         event.preventDefault();
 
         if (isSubmitting) return;
-
-        if (SCRIPT_URL === "TEMPEL_URL_WEB_APP_DI_SINI") {
-            setStatus("URL Google Sheets belum dipasang.");
-            return;
-        }
 
         setIsSubmitting(true);
         setStatus("");
@@ -53,12 +50,19 @@ export default function Reservation() {
                 body: JSON.stringify(data)
             });
 
-            setStatus(
-                "Permintaan telah dikirim. Periksa Google Sheets untuk memastikan pesanan tercatat."
-            );
+            setShowSuccess(true);
+
+            setForm({
+                customerName: "",
+                customerWhatsapp: "",
+                orderDate: "",
+                orderPeople: "",
+                orderMenu: "",
+                orderNotes: ""
+            });
         } catch (error) {
             setStatus(
-                "Pengiriman gagal. Periksa koneksi internet dan coba lagi."
+                "Pesanan belum dapat dikirim. Periksa koneksi internet dan coba lagi."
             );
         } finally {
             setIsSubmitting(false);
@@ -75,8 +79,8 @@ export default function Reservation() {
                         <span>Ayam Sambel Dower?</span>
                     </h2>
                     <p>
-                        Isi formulir pemesanan untuk mengirim data pesanan
-                        langsung ke sistem reservasi kami.
+                        Isi formulir pemesanan di samping untuk
+                        mengirimkan pesanan Anda dengan mudah.
                     </p>
                 </div>
 
@@ -121,10 +125,8 @@ export default function Reservation() {
                                 <input
                                     type="date"
                                     id="orderDate"
+                                    min={new Date().toLocaleDateString("en-CA")}
                                     required
-                                    min={
-                                        new Date().toLocaleDateString("en-CA")
-                                    }
                                     value={form.orderDate}
                                     onChange={handleChange}
                                 />
@@ -141,18 +143,10 @@ export default function Reservation() {
                                     onChange={handleChange}
                                 >
                                     <option value="">Pilih jumlah</option>
-                                    <option value="1–25 orang">
-                                        1–25 orang
-                                    </option>
-                                    <option value="25–50 orang">
-                                        25–50 orang
-                                    </option>
-                                    <option value="50–100 orang">
-                                        50–100 orang
-                                    </option>
-                                    <option value="100+ orang">
-                                        100+ orang
-                                    </option>
+                                    <option value="1–25 orang">1–25 orang</option>
+                                    <option value="25–50 orang">25–50 orang</option>
+                                    <option value="50–100 orang">50–100 orang</option>
+                                    <option value="100+ orang">100+ orang</option>
                                 </select>
                             </div>
                         </div>
@@ -203,13 +197,66 @@ export default function Reservation() {
                         </button>
 
                         {status && (
-                            <p className="reservation-note" role="status">
+                            <p className="reservation-note" role="alert">
                                 {status}
                             </p>
                         )}
                     </form>
                 </div>
             </div>
+
+            {showSuccess && (
+                <div
+                    className="success-modal-overlay"
+                    onClick={() => setShowSuccess(false)}
+                >
+                    <div
+                        className="success-modal"
+                        role="dialog"
+                        aria-modal="true"
+                        aria-labelledby="success-title"
+                        onClick={(event) => event.stopPropagation()}
+                    >
+                        <div className="success-icon">
+                            <svg
+                                viewBox="0 0 52 52"
+                                fill="none"
+                                aria-hidden="true"
+                            >
+                                <circle
+                                    cx="26"
+                                    cy="26"
+                                    r="24"
+                                    stroke="currentColor"
+                                    strokeWidth="2.5"
+                                />
+                                <path
+                                    d="M15 26.5L22.5 34L37.5 18"
+                                    stroke="currentColor"
+                                    strokeWidth="3.5"
+                                    strokeLinecap="round"
+                                    strokeLinejoin="round"
+                                />
+                            </svg>
+                        </div>
+
+                        <h3 id="success-title">Pesanan Berhasil Dikirim!</h3>
+
+                        <p>
+                            Terima kasih, tim kami akan segera
+                            mengonfirmasi pesanan ini via WhatsApp.
+                        </p>
+
+                        <button
+                            type="button"
+                            className="success-modal-button"
+                            onClick={() => setShowSuccess(false)}
+                        >
+                            Tutup
+                        </button>
+                    </div>
+                </div>
+            )}
         </section>
     );
 }
