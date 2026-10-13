@@ -2720,3 +2720,126 @@ button{
         border-radius: 12px;
     }
 }
+
+
+/* Notifikasi sukses reservasi */
+.success-modal-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    background: rgba(20, 20, 20, 0.55);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    animation: successFadeIn 0.2s ease;
+}
+
+.success-modal {
+    width: 100%;
+    max-width: 390px;
+    padding: 34px 28px 28px;
+    border-radius: 22px;
+    background: #FFFFFF;
+    color: #1A1A1A;
+    text-align: center;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.18);
+    animation: successPopIn 0.3s ease;
+}
+
+.success-icon {
+    width: 76px;
+    height: 76px;
+    margin: 0 auto 22px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #FFFFFF;
+    background: #D62828;
+    border-radius: 50%;
+}
+
+.success-icon svg {
+    width: 43px;
+    height: 43px;
+}
+
+.success-modal h3 {
+    margin: 0 0 12px;
+    font-family: "Poppins", sans-serif;
+    font-size: 21px;
+    font-weight: 700;
+    line-height: 1.4;
+}
+
+.success-modal p {
+    margin: 0 0 25px;
+    color: #666666;
+    font-family: "Poppins", sans-serif;
+    font-size: 14px;
+    line-height: 1.8;
+}
+
+.success-modal-button {
+    width: 100%;
+    min-height: 48px;
+    border: none;
+    border-radius: 12px;
+    background: #D62828;
+    color: #FFFFFF;
+    font-family: "Poppins", sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s ease;
+}
+
+.success-modal-button:hover {
+    background: #B91F1F;
+}
+
+.success-modal-button:focus-visible {
+    outline: 3px solid #F3A5A5;
+    outline-offset: 3px;
+}
+
+@keyframes successFadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes successPopIn {
+    from {
+        opacity: 0;
+        transform: translateY(12px) scale(0.97);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+@media (max-width: 480px) {
+    .success-modal {
+        max-width: 340px;
+        padding: 30px 22px 24px;
+        border-radius: 18px;
+    }
+
+    .success-modal h3 {
+        font-size: 19px;
+    }
+
+    .success-modal p {
+        font-size: 13px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .success-modal-overlay,
+    .success-modal {
+        animation: none;
+    }
+}
