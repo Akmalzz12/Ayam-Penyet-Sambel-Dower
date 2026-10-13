@@ -58,7 +58,7 @@ export default function Hero() {
             <div className="hero-container">
                 <div className="hero-content">
                     <span className="hero-label">
-                        RUMAH MAKA
+                        RUMAH MAKAN
                     </span>
 
                     <h1>
