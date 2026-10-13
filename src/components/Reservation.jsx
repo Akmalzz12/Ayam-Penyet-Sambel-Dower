@@ -1,7 +1,7 @@
 
 import { useState } from "react";
 
-const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbxYTxfiEPqS65ctqAFIk32DCAZHiOOGmB9C9Reje91uTXWvH4GsU9BJx1ZtD1i1JfsW/exec";
+const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbztQwLjKOIX08F3cJV6f8aNYV4expJbT6rO1No08xqcno1yn-G33oVUKnLMHzQJMRq6/exec";
 
 export default function Reservation() {
     const [form, setForm] = useState({
