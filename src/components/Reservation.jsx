@@ -167,16 +167,16 @@ export default function Reservation() {
                             >
                                 <option value="">Pilih menu</option>
                                 <option value="Ayam Penyet Geprek">
-                                    Ayam Penyet Geprek
+                                    Paket Geprekin
                                 </option>
                                 <option value="Ayam Penyet Mozarella">
-                                    Ayam Penyet Mozarella
+                                    Paket Mozain
                                 </option>
                                 <option value="Ayam Penyet Sambel Matah">
-                                    Ayam Penyet Sambel Matah
+                                    Paket Matahin
                                 </option>
                                 <option value="Ayam Bakar Penyet">
-                                    Ayam Bakar Penyet
+                                    Paket Bakarin
                                 </option>
                             </select>
                         </div>
