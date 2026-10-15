@@ -3,6 +3,7 @@ import Hero from "./components/Hero";
 import Menu from "./components/Menu";
 import SuasanaTempat from "./components/SuasanaTempat";
 import WhyUs from "./components/WhyUs";
+import Chatbot from "./components/Chatbot";
 import FAQ from "./components/FAQ";
 import Reservation from "./components/Reservation";
 import Footer from "./components/Footer";
@@ -20,6 +21,7 @@ export default function App() {
                 <Menu />
                 <SuasanaTempat />
                 <WhyUs />
+                <Chatbot />
                 <FAQ />
                 <Reservation />
             </main>
