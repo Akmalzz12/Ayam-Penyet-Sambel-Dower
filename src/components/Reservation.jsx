@@ -1,6 +1,5 @@
 
 import { useState } from "react";
-import { supabase } from "../supabaseClient";
 
 const INITIAL_FORM = {
     customerName: "",
@@ -10,6 +9,9 @@ const INITIAL_FORM = {
     orderMenu: "",
     orderNotes: ""
 };
+
+// GANTI dengan URL Web App Google Apps Script milik lu.
+const GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbz7Tt-ZYN9F_5VRPOBYc5lMN-PdpXaBYZsBx_Nz2-dgwmGXUSlqUfHueN15gXUkNHz-/exec";
 
 export default function Reservation() {
     const [form, setForm] = useState(INITIAL_FORM);
@@ -27,35 +29,45 @@ export default function Reservation() {
 
         if (isSubmitting) return;
 
+        if (
+            !GOOGLE_SCRIPT_URL.startsWith("https://script.google.com/")
+        ) {
+            setStatus("URL Google Sheets belum dikonfigurasi.");
+            return;
+        }
+
         setIsSubmitting(true);
         setStatus("");
 
+        const payload = {
+            nama: form.customerName.trim(),
+            whatsapp: form.customerWhatsapp.trim(),
+            tanggal_acara: form.orderDate,
+            jumlah_orang: form.orderPeople,
+            pilihan_menu: form.orderMenu,
+            deskripsi: form.orderNotes.trim()
+        };
+
         try {
-            const { error } = await supabase
-                .from("reservations")
-                .insert([
-                    {
-                        nama: form.customerName.trim(),
-                        whatsapp: form.customerWhatsapp.trim(),
-                        tanggal_acara: form.orderDate,
-                        jumlah_orang: form.orderPeople,
-                        pilihan_menu: form.orderMenu,
-                        deskripsi: form.orderNotes.trim()
-                    }
-                ]);
+            // no-cors digunakan karena endpoint Apps Script
+            // tidak selalu mengizinkan pembacaan respons lintas origin.
+            const response = await fetch(GOOGLE_SCRIPT_URL, {
+                method: "POST",
+                mode: "no-cors",
+                headers: {
+                    "Content-Type": "text/plain;charset=utf-8"
+                },
+                body: JSON.stringify(payload)
+            });
 
-            if (error) {
-                console.error("Supabase reservation error:", error);
-                throw error;
-            }
-
+            // Respons opaque dari no-cors tidak dapat memastikan
+            // bahwa Google Sheets berhasil menyimpan data.
             setForm({ ...INITIAL_FORM });
             setShowSuccess(true);
         } catch (error) {
-            console.error("Gagal mengirim pesanan:", error);
-
+            console.error("Gagal mengirim reservasi:", error);
             setStatus(
-                "Pesanan belum berhasil dikirim. Silakan coba lagi beberapa saat."
+                "Pengiriman gagal. Periksa koneksi internet lalu coba lagi."
             );
         } finally {
             setIsSubmitting(false);
@@ -94,10 +106,7 @@ export default function Reservation() {
                         onSubmit={handleSubmit}
                     >
                         <div className="form-group">
-                            <label htmlFor="customerName">
-                                Nama
-                            </label>
-
+                            <label htmlFor="customerName">Nama</label>
                             <input
                                 type="text"
                                 id="customerName"
@@ -113,7 +122,6 @@ export default function Reservation() {
                             <label htmlFor="customerWhatsapp">
                                 Nomor WhatsApp
                             </label>
-
                             <input
                                 type="tel"
                                 id="customerWhatsapp"
@@ -131,15 +139,16 @@ export default function Reservation() {
                                 <label htmlFor="orderDate">
                                     Tanggal Acara
                                 </label>
-
                                 <input
                                     type="date"
                                     id="orderDate"
-                                    min={new Date(
-                                        Date.now() -
-                                        new Date().getTimezoneOffset() *
-                                        60000
-                                    ).toISOString().slice(0, 10)}
+                                    min={
+                                        new Date(
+                                            Date.now() -
+                                            new Date().getTimezoneOffset() *
+                                            60000
+                                        ).toISOString().slice(0, 10)
+                                    }
                                     required
                                     value={form.orderDate}
                                     onChange={handleChange}
@@ -150,66 +159,39 @@ export default function Reservation() {
                                 <label htmlFor="orderPeople">
                                     Jumlah Orang
                                 </label>
-
                                 <select
                                     id="orderPeople"
                                     required
                                     value={form.orderPeople}
                                     onChange={handleChange}
                                 >
-                                    <option value="">
-                                        Pilih jumlah
-                                    </option>
-                                    <option value="1–25 orang">
-                                        1–25 orang
-                                    </option>
-                                    <option value="25–50 orang">
-                                        25–50 orang
-                                    </option>
-                                    <option value="50–100 orang">
-                                        50–100 orang
-                                    </option>
-                                    <option value="100+ orang">
-                                        100+ orang
-                                    </option>
+                                    <option value="">Pilih jumlah</option>
+                                    <option value="1–25 orang">1–25 orang</option>
+                                    <option value="25–50 orang">25–50 orang</option>
+                                    <option value="50–100 orang">50–100 orang</option>
+                                    <option value="100+ orang">100+ orang</option>
                                 </select>
                             </div>
                         </div>
 
                         <div className="form-group">
-                            <label htmlFor="orderMenu">
-                                Pilihan Menu
-                            </label>
-
+                            <label htmlFor="orderMenu">Pilihan Menu</label>
                             <select
                                 id="orderMenu"
                                 required
                                 value={form.orderMenu}
                                 onChange={handleChange}
                             >
-                                <option value="">
-                                    Pilih menu
-                                </option>
-                                <option value="Paket Geprekin">
-                                    Paket Geprekin
-                                </option>
-                                <option value="Paket Mozain">
-                                    Paket Mozain
-                                </option>
-                                <option value="Paket Matahin">
-                                    Paket Matahin
-                                </option>
-                                <option value="Paket Bakarin">
-                                    Paket Bakarin
-                                </option>
+                                <option value="">Pilih menu</option>
+                                <option value="Paket Geprekin">Paket Geprekin</option>
+                                <option value="Paket Mozain">Paket Mozain</option>
+                                <option value="Paket Matahin">Paket Matahin</option>
+                                <option value="Paket Bakarin">Paket Bakarin</option>
                             </select>
                         </div>
 
                         <div className="form-group">
-                            <label htmlFor="orderNotes">
-                                Deskripsi
-                            </label>
-
+                            <label htmlFor="orderNotes">Deskripsi</label>
                             <textarea
                                 id="orderNotes"
                                 rows="4"
@@ -231,10 +213,7 @@ export default function Reservation() {
                         </button>
 
                         {status && (
-                            <p
-                                className="reservation-note"
-                                role="alert"
-                            >
+                            <p className="reservation-note" role="alert">
                                 {status}
                             </p>
                         )}
@@ -267,7 +246,6 @@ export default function Reservation() {
                                     stroke="currentColor"
                                     strokeWidth="2.5"
                                 />
-
                                 <path
                                     d="M15 26.5L22.5 34L37.5 18"
                                     stroke="currentColor"
@@ -279,14 +257,13 @@ export default function Reservation() {
                         </div>
 
                         <h3 id="success-title">
-                            Pesanan Berhasil Dikirim!
+                            Permintaan Terkirim
                         </h3>
-
                         <p>
-                            Terima kasih, tim kami akan segera
-                            mengonfirmasi pesanan ini via WhatsApp.
+                            Permintaan pengiriman sudah dilakukan.
+                            Silakan periksa Google Sheets untuk memastikan
+                            pesanan tercatat.
                         </p>
-
                         <button
                             type="button"
                             className="success-modal-button"
@@ -299,4 +276,4 @@ export default function Reservation() {
             )}
         </section>
     );
-}
+            }
