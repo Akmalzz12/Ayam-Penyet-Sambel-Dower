@@ -1,7 +1,7 @@
 
 import { useState } from "react";
 
-const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbys_WqQhHeJIbGyN8Wm_Ao-om5VuU0dNbJjeHoRXQbChJ2JAyrtQ6n6MQ6OIp_OtCwg/exec";
+const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbyLW266m_WODuRMtqgeQDuMIIkELKKdibMIKfSTpUzfExGszT4DFl_8oGpHp71S0j_b/exec";
 
 export default function Chatbot() {
   const [open, setOpen] = useState(false);
